@@ -1,8 +1,11 @@
 import axios from 'axios';
 
+// Backend server URL for calling backend routes
+export const serverURL = import.meta.env.VITE_SERVER_URL || 'https://spliteasy-0l64.onrender.com';
+
 // Create configured Axios instance
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: import.meta.env.VITE_API_URL || `${serverURL}/api`,
   withCredentials: true, // Send HTTP-only cookies
   headers: {
     'Content-Type': 'application/json',
